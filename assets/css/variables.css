@@ -1,0 +1,6 @@
+/* Variables CSS */
+:root {
+  --bg: #170b1a;         /* main background color */
+  --accent: #482653;    /* accent color */
+  --accent-transparent: #261a2bf9; /* accent color with transparency */
+}

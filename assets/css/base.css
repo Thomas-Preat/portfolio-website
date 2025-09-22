@@ -1,0 +1,31 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg, var(--bg), #383d44);
+    color: #e2e2e2;
+    min-height: 100vh;
+}
+
+main {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}

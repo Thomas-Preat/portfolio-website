@@ -1,0 +1,35 @@
+/* Responsive CSS for nav-menu and general layout */
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .site-header {
+        grid-template-columns: 1fr;
+        padding-top: 5.2rem;
+    }
+    .nav-menu {
+        flex-direction: column;
+        position: fixed;
+        top: 54px;
+        left: 0;
+        width: 101%;
+        display: none;
+        border: 1px solid;
+        border-color: rgb(103, 89, 112);
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 1em;
+        font-size: 20px;
+        border-radius: 0;
+        background: var(--accent-transparent);
+        align-items: center;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
