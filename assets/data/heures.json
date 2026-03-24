@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "id": "hackaton-2024",
+      "projet": "Hackaton 2024 EPHEC",
+      "description": "Electronique / Programmation",
+      "heures_reelles": 48,
+      "heures_comptabilisees": 10
+    },
+    {
+      "id": "hackaton-2025",
+      "projet": "Hackaton 2025 EPHEC",
+      "description": "Electronique / Programmation",
+      "heures_reelles": 48,
+      "heures_comptabilisees": 10
+    },
+    {
+      "id": "cybersecurity-2026",
+      "projet": "Cybersecurity Challenge Belgium 2026",
+      "description": "Sécurité",
+      "heures_reelles": 36,
+      "heures_comptabilisees": 10
+    },
+    {
+      "id": "dev-web-perso",
+      "projet": "Développement web personnel",
+      "description": "Sécurité",
+      "heures_reelles": 30,
+      "heures_comptabilisees": 10
+    },
+    {
+      "id": "heures-en-plus",
+      "projet": "Heures en plus (à détailler)",
+      "description": "-",
+      "heures_reelles": "-",
+      "heures_comptabilisees": 10
+    }
+    
+  ]
+}

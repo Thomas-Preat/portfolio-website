@@ -1,0 +1,56 @@
+{
+  "projects": [
+    {
+      "id": "hackaton-2024",
+      "titre": "Hackaton 2024 EPHEC",
+      "details": "Prototype electronique et programmation d'un systeme embarque en equipe.",
+      "images": [
+        {
+          "src": "../../assets/images/hackaton-2024-1.jpg",
+          "alt": "Equipe au hackaton 2024",
+          "caption": "Session de developpement"
+        },
+        {
+          "src": "../../assets/images/hackaton-2024-2.jpg",
+          "alt": "Prototype du projet 2024",
+          "caption": "Prototype final"
+        },
+        {
+          "src": "../../assets/images/hackaton-2024-2.jpg",
+          "alt": "Prototype du projet 2024",
+          "caption": "Prototype fi"
+        }
+      ]
+    },
+    {
+      "id": "hackaton-2025",
+      "titre": "Hackaton 2025 EPHEC",
+      "details": "Iteration du projet avec une architecture plus robuste et meilleure gestion des capteurs.",
+      "images": [
+        {
+          "src": "../../assets/images/placeholder.svg",
+          "alt": "Demo hackaton 2025",
+          "caption": "Presentation finale"
+        }
+      ]
+    },
+    {
+      "id": "cybersecurity-2026",
+      "titre": "Cybersecurity Challenge Belgium 2026",
+      "details": "Resolution de challenges en securite defensive et offensive avec restitution technique.",
+      "images": []
+    },
+    {
+      "id": "dev-web-perso",
+      "titre": "Developpement web personnel",
+      "details": "Conception du portfolio, integration responsive et amelioration continue de l'UX.",
+      "images": []
+    },
+    {
+      "id": "heures-en-plus",
+      "titre": "Heures en plus",
+      "details": "Bloc reserve pour ajouter des heures detaillees au fur et a mesure.",
+      "images": []
+    }
+  ]
+}

@@ -1,6 +1,10 @@
 /* Variables CSS */
 :root {
-  --bg: #170b1a;         /* main background color */
+  --bg: #1e0f21;         /* main background color */
   --accent: #482653;    /* accent color */
   --accent-transparent: #261a2bf9; /* accent color with transparency */
+  --accent-light: #a763b7; /* lighter accent color */
+  --accent-dark: #3b1e3a;  /* darker accent color */
+  --border: #482653;     /* border color */
+  --link: #e79bf8;
 }
