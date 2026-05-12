@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heures de Projets Prestees</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <header class="header-banner">
+        <h1 class="logo">Thomas Preat</h1>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav id="primary-nav" class="nav-menu">
+            <a href="/">Accueil</a>
+            <a href="/projets">Projets</a>
+            <a href="/heures">Heures</a>
+            <a href="/cv">CV</a>
+            <a href="/#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Suivi des heures</h2>
+            <p>La liste ci-dessous est le releve officiel de mes heures prestees par projet. Cliquez sur une ligne pour afficher les details et les visuels associes.</p>
+        </section>
+
+        <section id="table-hours">
+            <h1>Heures de Projets Prestees</h1>
+            <table id="hours-table" data-source="../assets/data/heures.json" data-details-source="../assets/data/heures-details.json">
+                <caption>Resume des heures par projet</caption>
+                <thead>
+                    <tr>
+                        <th>Projet</th>
+                        <th>Description</th>
+                        <th class="hours-count">Heures reelles</th>
+                        <th class="hours-count">Heures comptabilisees</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">Chargement des donnees...</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr id="total-row">
+                        <td colspan="3" id="total-cell">Total comptabilise</td>
+                        <td class="hours-count">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+
+    <div id="project-modal" class="project-modal" aria-hidden="true">
+        <div class="project-modal__backdrop" data-close-modal="true"></div>
+        <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+            <button id="project-modal-close" class="project-modal__close" type="button" aria-label="Fermer">X</button>
+            <h2 id="project-modal-title">Details du projet</h2>
+            <p id="project-modal-text"></p>
+            <div id="project-modal-gallery" class="project-modal__gallery"></div>
+        </div>
+    </div>
+
+    <div id="image-lightbox" class="image-lightbox" aria-hidden="true">
+        <div class="image-lightbox__backdrop" data-close-lightbox="true"></div>
+        <div class="image-lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="image-lightbox-caption">
+            <button id="image-lightbox-close" class="image-lightbox__close" type="button" aria-label="Fermer l'image">X</button>
+            <img id="image-lightbox-img" src="" alt="">
+            <p id="image-lightbox-caption" class="image-lightbox__caption"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Thomas Preat. Tous droits reserves.</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -9,9 +9,7 @@ const navToggle = $('.nav-toggle');
 const navMenu = $('#primary-nav');
 
 if (navToggle && navMenu) {
-    console.log('ici');
     navToggle.addEventListener('click', () => {
-        console.log('click');
         const expanded = navToggle.getAttribute('aria-expanded') === 'true';
         navToggle.setAttribute('aria-expanded', !expanded);
         navMenu.classList.toggle('show');
@@ -20,11 +18,50 @@ if (navToggle && navMenu) {
     // close menu when clicking a link
     $all('#primary-nav a').forEach(link => {
         link.addEventListener('click', () => {
-            console.log('click link');
             navToggle.setAttribute('aria-expanded', false);
             navMenu.classList.remove('show');
         });
     });
+}
+
+function markActiveNavLink() {
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+    $all('#primary-nav a').forEach((link) => {
+        const href = link.getAttribute('href') || '';
+        if (!href || href.startsWith('#')) {
+            return;
+        }
+
+        const normalizedHref = new URL(href, window.location.origin + window.location.pathname).pathname.replace(/\/$/, '');
+        if (normalizedHref === currentPath) {
+            link.setAttribute('aria-current', 'page');
+        }
+    });
+}
+
+function initRevealAnimations() {
+    const targets = $all('main section, .projet');
+    if (targets.length === 0) {
+        return;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+        targets.forEach((el) => el.classList.add('is-visible'));
+        return;
+    }
+
+    targets.forEach((el) => el.classList.add('reveal'));
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.16 });
+
+    targets.forEach((el) => observer.observe(el));
 }
 
 function escapeHtml(value) {
@@ -351,3 +388,5 @@ async function populateHoursTableFromJson() {
 
 initProjectModalInteractions();
 populateHoursTableFromJson();
+markActiveNavLink();
+initRevealAnimations();

@@ -47,6 +47,18 @@
       "images": []
     },
     {
+      "id": "coaching-softmaker",
+      "titre": "Coaching semaine Softmaker",
+      "details": "Coaching d'étudiants en semaine internationale.",
+      "images": [
+        {
+          "src": "../../assets/images/placeholder.svg",
+          "alt": "Preuve papier du coaching",
+          "caption": "Preuve du coaching"
+        }
+      ]
+    },
+    {
       "id": "heures-en-plus",
       "titre": "Heures en plus",
       "details": "Bloc reserve pour ajouter des heures detaillees au fur et a mesure.",

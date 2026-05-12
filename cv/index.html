@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Portfolio Thomas Preat</title>
+    <meta name="description" content="Consultez et telechargez le CV PDF de Thomas Preat.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <header class="header-banner">
+        <h1 class="logo">Thomas Preat</h1>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav id="primary-nav" class="nav-menu">
+            <a href="/">Accueil</a>
+            <a href="/projets">Projets</a>
+            <a href="/heures">Heures</a>
+            <a href="/cv">CV</a>
+            <a href="/#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="cv-page">
+        <section class="cv-pdf-section">
+            <h2>Mon CV (PDF)</h2>
+            <p>Le CV est affiche ci-dessous. Si l'aperçu ne se charge pas, utilisez le bouton de telechargement.</p>
+            <div class="cv-actions">
+                <a class="btn" href="../assets/cv/cv.pdf" target="_blank" rel="noopener" download>Telecharger le CV</a>
+            </div>
+            <div class="cv-pdf-wrapper">
+                <object data="../assets/cv/cv.pdf" type="application/pdf" class="cv-pdf-viewer">
+                    <p>
+                        Impossible d'afficher le PDF dans ce navigateur.
+                        <a href="../assets/cv/cv.pdf" target="_blank" rel="noopener">Ouvrir le CV</a>
+                    </p>
+                </object>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Thomas Preat. Tous droits reserves.</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

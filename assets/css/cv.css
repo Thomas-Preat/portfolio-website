@@ -1,0 +1,42 @@
+.cv-page {
+    display: grid;
+    gap: 1rem;
+}
+
+.cv-pdf-section h2 {
+    margin-bottom: 0.5rem;
+}
+
+.cv-actions {
+    margin: 0.9rem 0 1.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.cv-pdf-wrapper {
+    width: 100%;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(215, 151, 244, 0.35);
+    overflow: hidden;
+    background: rgba(17, 8, 24, 0.72);
+    box-shadow: 0 16px 40px rgba(8, 1, 13, 0.45);
+}
+
+.cv-pdf-viewer {
+    display: block;
+    width: 100%;
+    min-height: 75vh;
+    background: #1a0f26;
+}
+
+.cv-pdf-viewer p {
+    margin: 0;
+    padding: 1rem;
+}
+
+@media (max-width: 700px) {
+    .cv-pdf-viewer {
+        min-height: 60vh;
+    }
+}

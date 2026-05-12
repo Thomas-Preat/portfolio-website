@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem 0;
+    margin: 0;
 }
 
 #hours-count,
@@ -10,8 +10,42 @@
     text-align: center;
 }
 
+#table-hours h1 {
+    width: 100%;
+    margin-bottom: 1.1rem;
+}
+
+#hours-table {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(215, 151, 244, 0.35);
+    background: linear-gradient(150deg, rgba(79, 34, 103, 0.45), rgba(25, 13, 36, 0.74));
+    box-shadow: 0 18px 48px rgba(7, 1, 11, 0.5);
+}
+
+#hours-table thead {
+    background: linear-gradient(120deg, rgba(176, 99, 212, 0.72), rgba(109, 53, 142, 0.8));
+}
+
+#hours-table th,
+#hours-table td {
+    padding: 0.8rem 0.7rem;
+    border-bottom: 1px solid rgba(214, 164, 238, 0.14);
+}
+
+#hours-table th {
+    color: #fff3ff;
+    font-weight: 600;
+}
+
+#hours-table td {
+    color: var(--text-soft);
+}
+
 #total-row {
     font-weight: bold;
+    background: rgba(180, 104, 219, 0.15);
 }
 
 #total-cell {
@@ -20,18 +54,17 @@
 
 .hours-row {
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color var(--speed) ease, transform var(--speed) ease;
 }
 
 .hours-row:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(179, 112, 211, 0.2);
+    transform: translateX(3px);
 }
 
 .hours-project-cell {
     font-weight: 600;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
+    color: #f5d6ff;
 }
 
 .project-modal {
@@ -50,9 +83,9 @@
 .project-modal__backdrop {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 20% 20%, rgba(88, 105, 148, 0.2), rgba(8, 12, 20, 0.78));
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    background: radial-gradient(circle at 20% 20%, rgba(177, 88, 219, 0.2), rgba(8, 4, 14, 0.8));
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
 }
 
 .project-modal__dialog {
@@ -61,12 +94,12 @@
     width: min(760px, calc(100% - 2rem));
     max-height: calc(100vh - 2rem);
     overflow-y: auto;
-    background: linear-gradient(145deg, rgba(34, 44, 66, 0.76), rgba(20, 27, 43, 0.72));
-    border: 1px solid rgba(176, 195, 226, 0.28);
-    color: #e6edf9;
+    background: linear-gradient(145deg, rgba(57, 26, 75, 0.8), rgba(23, 11, 33, 0.86));
+    border: 1px solid rgba(210, 148, 240, 0.36);
+    color: #f0e6fa;
     border-radius: 14px;
     padding: 1.25rem;
-    box-shadow: 0 24px 60px rgba(5, 8, 15, 0.48);
+    box-shadow: 0 24px 60px rgba(6, 0, 10, 0.58);
     backdrop-filter: blur(10px) saturate(125%);
     -webkit-backdrop-filter: blur(10px) saturate(125%);
 }
@@ -77,7 +110,7 @@
 }
 
 .project-modal__dialog p {
-    color: #c7d3ea;
+    color: #dcc9ea;
 }
 
 .project-modal__close {
@@ -88,15 +121,15 @@
     height: 32px;
     border: none;
     border-radius: 999px;
-    background: rgba(225, 236, 255, 0.18);
-    color: #eff5ff;
-    border: 1px solid rgba(206, 223, 252, 0.3);
+    background: rgba(238, 198, 255, 0.2);
+    color: #fff4ff;
+    border: 1px solid rgba(238, 198, 255, 0.34);
     cursor: pointer;
     font-weight: 700;
 }
 
 .project-modal__close:hover {
-    background: rgba(225, 236, 255, 0.32);
+    background: rgba(238, 198, 255, 0.34);
 }
 
 .project-modal__gallery {
@@ -108,10 +141,10 @@
 
 .project-modal__figure {
     margin: 0;
-    border: 1px solid rgba(197, 214, 244, 0.28);
+    border: 1px solid rgba(213, 155, 240, 0.3);
     border-radius: 10px;
     overflow: hidden;
-    background: rgba(219, 230, 250, 0.12);
+    background: rgba(213, 155, 240, 0.12);
 }
 
 .project-modal__figure img {
@@ -125,13 +158,13 @@
 .project-modal__figure figcaption {
     padding: 0.55rem 0.65rem;
     font-size: 0.9rem;
-    color: #d7e2f7;
-    background: rgba(18, 26, 42, 0.56);
+    color: #efe0f8;
+    background: rgba(27, 13, 38, 0.62);
 }
 
 .project-modal__empty {
     margin: 0;
-    color: #b7c5de;
+    color: #d0b8df;
 }
 
 .image-lightbox {
@@ -150,7 +183,7 @@
 .image-lightbox__backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(4, 7, 13, 0.86);
+    background: rgba(8, 2, 12, 0.88);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
@@ -162,8 +195,8 @@
     max-height: calc(100vh - 1.5rem);
     padding: 0.85rem;
     border-radius: 14px;
-    border: 1px solid rgba(188, 209, 246, 0.35);
-    background: linear-gradient(160deg, rgba(31, 41, 62, 0.8), rgba(17, 23, 36, 0.78));
+    border: 1px solid rgba(226, 170, 247, 0.36);
+    background: linear-gradient(160deg, rgba(56, 24, 74, 0.82), rgba(20, 10, 30, 0.82));
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
@@ -178,7 +211,7 @@
 
 .image-lightbox__caption {
     margin: 0.7rem 0.2rem 0.2rem;
-    color: #d8e4fb;
+    color: #f0e0fa;
     font-size: 0.95rem;
     text-align: center;
 }
@@ -190,15 +223,15 @@
     width: 34px;
     height: 34px;
     border-radius: 999px;
-    border: 1px solid rgba(206, 223, 252, 0.35);
-    background: rgba(225, 236, 255, 0.2);
-    color: #eff5ff;
+    border: 1px solid rgba(226, 170, 247, 0.35);
+    background: rgba(244, 201, 255, 0.24);
+    color: #fff4ff;
     font-weight: 700;
     cursor: pointer;
 }
 
 .image-lightbox__close:hover {
-    background: rgba(225, 236, 255, 0.36);
+    background: rgba(244, 201, 255, 0.36);
 }
 
 @media (max-width: 700px) {
@@ -221,77 +254,15 @@
     }
 }
 
- /* Popup container */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
+@media (max-width: 740px) {
+    #hours-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 
-/* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
+    #hours-table th,
+    #hours-table td {
+        font-size: 0.94rem;
+    }
 }
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-/* Toggle this class when clicking on the popup container (show the popup) */
-.popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 0.5s;
-    animation: fadeIn 0.5s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* 
-
-Toggle this class when clicking outside the popup (hide the popup with fade out)
-.popup .hide {
-    visibility: visible;
-    -webkit-animation: fadeOut 0.5s;
-    animation: fadeOut 0.5s;
-}
-
-/* Add animation (fade out the popup)
-@-webkit-keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-    
-*/

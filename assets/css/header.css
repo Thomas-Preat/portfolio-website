@@ -1,48 +1,63 @@
 .header-banner {
     position: sticky;
     top: 0;
-    width: 100%;
+    width: min(1100px, calc(100% - 2rem));
+    margin: 1rem auto 0;
+    padding: 0.6rem 0.8rem;
     z-index: 100;
-    background: #0000007b; 
-    backdrop-filter: blur(10px);
+    background: rgba(28, 14, 40, 0.72);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: white;
-    padding-left: 1em;
+    margin: 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    font-weight: 700;
+    color: #f7e8ff;
+    padding-left: 0.5rem;
 }
 
 .nav-menu {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    gap: 0.35rem;
     position: static;
     background: none;
     width: auto;
 }
 
 .nav-menu a {
-    color: white;
+    color: #f1d8ff;
     text-decoration: none;
-    padding: 0.4em 0.5em;
-    margin-right: 0.4em;
-    font-size: 18px;
-    border-radius: 80px;
-    transition: 0.2s;
+    padding: 0.45rem 0.9rem;
+    font-size: 1rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: background-color var(--speed) ease, border-color var(--speed) ease, transform var(--speed) ease;
 }
 
-.nav-menu a:hover{
-    background-color: var(--accent);
+.nav-menu a:hover,
+.nav-menu a:focus-visible,
+.nav-menu a[aria-current='page'] {
+    background: rgba(162, 86, 202, 0.28);
+    border-color: var(--border);
+    transform: translateY(-1px);
 }
 
 .nav-toggle {
     display: none;
     background: none;
-    border: 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.2rem 0.45rem;
     cursor: pointer;
 }
 

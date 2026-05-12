@@ -24,9 +24,16 @@
     {
       "id": "dev-web-perso",
       "projet": "Développement web personnel",
-      "description": "Sécurité",
+      "description": "Dev Web",
       "heures_reelles": 30,
       "heures_comptabilisees": 10
+    },
+    {
+      "id": "coaching-softmaker",
+      "projet": "Coaching semaine Softmaker",
+      "description": "Coaching",
+      "heures_reelles": 4,
+      "heures_comptabilisees": 4
     },
     {
       "id": "heures-en-plus",
