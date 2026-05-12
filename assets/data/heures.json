@@ -2,14 +2,16 @@
   "projects": [
     {
       "id": "hackaton-2024",
-      "projet": "Hackaton 2024 EPHEC",
+      "projet": "Hackathon 2024 EPHEC",
+      "categorie": "Challenge",
       "description": "Electronique / Programmation",
       "heures_reelles": 48,
       "heures_comptabilisees": 10
     },
     {
       "id": "hackaton-2025",
-      "projet": "Hackaton 2025 EPHEC",
+      "projet": "Hackathon 2025 EPHEC",
+      "categorie": "Challenge",
       "description": "Electronique / Programmation",
       "heures_reelles": 48,
       "heures_comptabilisees": 10
@@ -17,6 +19,7 @@
     {
       "id": "cybersecurity-2026",
       "projet": "Cybersecurity Challenge Belgium 2026",
+      "categorie": "Challenge",
       "description": "Sécurité",
       "heures_reelles": 36,
       "heures_comptabilisees": 10
@@ -24,6 +27,7 @@
     {
       "id": "dev-web-perso",
       "projet": "Développement web personnel",
+      "categorie": "Développement",
       "description": "Dev Web",
       "heures_reelles": 30,
       "heures_comptabilisees": 10
@@ -31,17 +35,34 @@
     {
       "id": "coaching-softmaker",
       "projet": "Coaching semaine Softmaker",
-      "description": "Coaching",
+      "categorie": "Coaching",
+      "description": "Semaine internationale",
       "heures_reelles": 4,
       "heures_comptabilisees": 4
     },
     {
+      "id": "digital-talent-night",
+      "projet": "Digital Talent Night",
+      "categorie": "Participation événements",
+      "description": "Autres",
+      "heures_reelles": 5,
+      "heures_comptabilisees": 5
+    },
+    {
+        "id": "cloud-azure",
+        "projet": "Conférence Cloud avec M365 et Azure Infrastructure",
+        "categorie": "Participation événements",
+        "description": "Gestion de projet",
+        "heures_reelles": 2,
+        "heures_comptabilisees": 2
+    },
+    {
       "id": "heures-en-plus",
       "projet": "Heures en plus (à détailler)",
+      "categorie": "Autres",
       "description": "-",
       "heures_reelles": "-",
       "heures_comptabilisees": 10
     }
-    
   ]
 }

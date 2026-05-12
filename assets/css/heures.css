@@ -67,6 +67,13 @@
     color: #f5d6ff;
 }
 
+.hours-category-cell {
+    vertical-align: middle;
+    font-weight: 700;
+    color: #f7deff;
+    background: rgba(188, 112, 224, 0.16);
+}
+
 .project-modal {
     position: fixed;
     inset: 0;

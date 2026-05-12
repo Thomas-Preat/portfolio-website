@@ -129,8 +129,8 @@ function openProjectModal(project, details) {
     const textEl = $('#project-modal-text', modal);
     const galleryEl = $('#project-modal-gallery', modal);
 
-    const title = details?.titre ?? project?.projet ?? 'Details du projet';
-    const text = details?.details ?? project?.description ?? 'Aucun detail disponible.';
+    const title = details?.titre ?? project?.projet ?? 'Détails du projet';
+    const text = details?.details ?? project?.description ?? 'Aucun détail disponible.';
 
     if (titleEl) {
         titleEl.textContent = title;
@@ -267,26 +267,42 @@ function renderHoursRows(hoursTable, projects) {
     }
 
     if (!Array.isArray(projects) || projects.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="4">Aucune donnee disponible.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="5">Aucune donnée disponible.</td></tr>';
         return;
     }
 
-    const rowsHtml = projects.map((project) => {
-        const projectId = getProjectId(project) || createSlug(project.projet);
-        const realHoursValue = toNumber(project.heures_reelles ?? project.heuresReelles ?? project.heures);
-        const accountedHoursValue = toNumber(project.heures_comptabilisees ?? project.heuresComptabilisees ?? project.heures);
-        const displayRealHours = realHoursValue === null ? '/' : realHoursValue;
-        const displayAccountedHours = accountedHoursValue === null ? '/' : accountedHoursValue;
+    const groupedByCategory = new Map();
+    projects.forEach((project) => {
+        const category = String(project.categorie ?? 'Autres').trim() || 'Autres';
+        if (!groupedByCategory.has(category)) {
+            groupedByCategory.set(category, []);
+        }
+        groupedByCategory.get(category).push(project);
+    });
 
-        return `
-            <tr class="hours-row" data-project-id="${escapeHtml(projectId)}">
-                <td class="hours-project-cell">${escapeHtml(project.projet ?? '/')}</td>
-                <td>${escapeHtml(project.description ?? '/')}</td>
-                <td class="hours-count">${escapeHtml(displayRealHours)}</td>
-                <td class="hours-count">${escapeHtml(displayAccountedHours)}</td>
-            </tr>
-        `;
-    }).join('');
+    let rowsHtml = '';
+    groupedByCategory.forEach((categoryProjects, category) => {
+        categoryProjects.forEach((project, index) => {
+            const projectId = getProjectId(project) || createSlug(project.projet);
+            const realHoursValue = toNumber(project.heures_reelles ?? project.heuresReelles ?? project.heures);
+            const accountedHoursValue = toNumber(project.heures_comptabilisees ?? project.heuresComptabilisees ?? project.heures);
+            const displayRealHours = realHoursValue === null ? '/' : realHoursValue;
+            const displayAccountedHours = accountedHoursValue === null ? '/' : accountedHoursValue;
+            const categoryCell = index === 0
+                ? `<td class="hours-category-cell" rowspan="${categoryProjects.length}">${escapeHtml(category)}</td>`
+                : '';
+
+            rowsHtml += `
+                <tr class="hours-row" data-project-id="${escapeHtml(projectId)}">
+                    ${categoryCell}
+                    <td class="hours-project-cell">${escapeHtml(project.projet ?? '/')}</td>
+                    <td>${escapeHtml(project.description ?? '/')}</td>
+                    <td class="hours-count">${escapeHtml(displayRealHours)}</td>
+                    <td class="hours-count">${escapeHtml(displayAccountedHours)}</td>
+                </tr>
+            `;
+        });
+    });
 
     tbody.innerHTML = rowsHtml;
 }
@@ -328,7 +344,7 @@ function updateHoursTotal(hoursTable = document.querySelector('#table-hours tabl
         return;
     }
 
-    const hourCells = hoursTable.querySelectorAll('tbody td:last-child');
+    const hourCells = hoursTable.querySelectorAll('tbody tr.hours-row td:last-child');
     const total = [...hourCells].reduce((sum, cell) => {
         const rawValue = cell.textContent.trim().replace(',', '.');
         const value = Number(rawValue);
@@ -378,9 +394,9 @@ async function populateHoursTableFromJson() {
     } catch (error) {
         const tbody = hoursTable.querySelector('tbody');
         if (tbody) {
-            tbody.innerHTML = '<tr><td colspan="4">Impossible de charger les donnees.</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="5">Impossible de charger les données.</td></tr>';
         }
-        console.error('Erreur de chargement du JSON des heures:', error);
+        console.error('Erreur de chargement du JSON des heures :', error);
     }
 
     updateHoursTotal(hoursTable);

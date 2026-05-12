@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heures de Projets Prestees</title>
+    <title>Heures de Projets Prestées</title>
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
     <header class="header-banner">
-        <h1 class="logo">Thomas Preat</h1>
+        <h1 class="logo">Thomas Préat</h1>
 
         <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
@@ -24,29 +24,30 @@
     <main>
         <section>
             <h2>Suivi des heures</h2>
-            <p>La liste ci-dessous est le releve officiel de mes heures prestees par projet. Cliquez sur une ligne pour afficher les details et les visuels associes.</p>
+            <p>La liste ci-dessous est le relevé officiel de mes heures prestées par projet. Cliquez sur une ligne pour afficher les détails et les visuels associés.</p>
         </section>
 
         <section id="table-hours">
-            <h1>Heures de Projets Prestees</h1>
+            <h1>Heures de Projets Prestées</h1>
             <table id="hours-table" data-source="../assets/data/heures.json" data-details-source="../assets/data/heures-details.json">
-                <caption>Resume des heures par projet</caption>
+                <caption>Résumé des heures par projet</caption>
                 <thead>
                     <tr>
-                        <th>Projet</th>
-                        <th>Description</th>
-                        <th class="hours-count">Heures reelles</th>
-                        <th class="hours-count">Heures comptabilisees</th>
+                        <th>Catégorie</th>
+                        <th>Nom du projet</th>
+                        <th>Cours concerné</th>
+                        <th class="hours-count">Heures réelles</th>
+                        <th class="hours-count">Heures comptabilisées</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="4">Chargement des donnees...</td>
+                        <td colspan="5">Chargement des données...</td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr id="total-row">
-                        <td colspan="3" id="total-cell">Total comptabilise</td>
+                        <td colspan="4" id="total-cell">Total comptabilisé</td>
                         <td class="hours-count">0</td>
                     </tr>
                 </tfoot>
@@ -58,7 +59,7 @@
         <div class="project-modal__backdrop" data-close-modal="true"></div>
         <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
             <button id="project-modal-close" class="project-modal__close" type="button" aria-label="Fermer">X</button>
-            <h2 id="project-modal-title">Details du projet</h2>
+            <h2 id="project-modal-title">Détails du projet</h2>
             <p id="project-modal-text"></p>
             <div id="project-modal-gallery" class="project-modal__gallery"></div>
         </div>
@@ -74,7 +75,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Thomas Preat. Tous droits reserves.</p>
+        <p>&copy; 2026 Thomas Préat. Tous droits réservés.</p>
     </footer>
 
     <script src="../assets/js/main.js"></script>
