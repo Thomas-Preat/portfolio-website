@@ -3,65 +3,176 @@
     {
       "id": "hackaton-2024",
       "titre": "Hackathon 2024 EPHEC",
-      "details": "Prototype électronique et programmation d'un système embarqué en équipe.",
+      "details": "Projet d'upcycling: restauration d'une ancienne lampe à gaz modernisée avec des LED.",
+      "explication": "Le Hackathon 2024 était centré sur l'upcycling. Avec l'équipe, nous sommes allés en brocante avec les professeurs pour sélectionner des objets anciens à moderniser, puis nous avons choisi une vieille lampe à gaz. Nous l'avons restaurée et transformée en solution d'éclairage moderne avec des LED. Sur la partie technique, j'ai participé à la programmation d'un Raspberry Pi Pico, aux opérations de soudure et à l'intégration électronique. Au-delà de l'aspect hardware et logiciel, ce projet m'a aussi permis de développer mes soft skills: communication, coordination en équipe, répartition des tâches et adaptation rapide face aux contraintes du hackathon.",
+      "instagram_posts": [
+        {
+          "url": "https://www.instagram.com/p/DCR-yQkMZ1s/?utm_source=ig_web_copy_link",
+          "label": "Présentation du projet sur Instagram"
+        }
+      ],
       "images": [
         {
-          "src": "../../assets/images/hackaton-2024-1.jpg",
-          "alt": "Équipe au hackaton 2024",
-          "caption": "Session de développement"
+          "src": "../../assets/images/hackaton1.jpg",
+          "alt": "Montage électronique avec Raspberry Pi Pico pour le Hackathon 2024",
+          "caption": "Intégration électronique et câblage du prototype"
         },
         {
-          "src": "../../assets/images/hackaton-2024-2.jpg",
-          "alt": "Prototype du projet 2024",
-          "caption": "Prototype final"
+          "src": "../../assets/images/hackaton2.jpg",
+          "alt": "Ancienne lampe à gaz restaurée pendant le Hackathon 2024",
+          "caption": "Lampe sélectionnée puis remise en état"
         },
         {
-          "src": "../../assets/images/hackaton-2024-2.jpg",
-          "alt": "Prototype du projet 2024",
-          "caption": "Prototype fi"
+          "src": "../../assets/images/hackaton3.jpg",
+          "alt": "Lampe modernisée avec éclairage LED lors du Hackathon 2024",
+          "caption": "Résultat final du projet d'upcycling"
         }
       ]
     },
     {
       "id": "hackaton-2025",
       "titre": "Hackathon 2025 EPHEC",
-      "details": "Itération du projet avec une architecture plus robuste et meilleure gestion des capteurs.",
+      "details": "Projet d'upcycling: automatisation d'une marionnette pour créer un mini-spectacle mécanique.",
+      "explication": "Le Hackathon 2025 reprenait la même logique d'upcycling, avec un nouveau défi créatif. Cette fois, nous avons récupéré une marionnette et conçu un spectacle automatique à l'aide de mécanismes qui tiraient ses cordes. J'ai participé à la conception du système, à l'intégration des mécanismes et aux ajustements pour synchroniser les mouvements de manière fluide. Ce projet m'a permis de consolider mes compétences techniques en prototypage, tout en renforçant le travail d'équipe, la coordination et la gestion des contraintes de temps propres au hackathon.",
       "images": [
         {
-          "src": "../../assets/images/placeholder.svg",
-          "alt": "Démo hackaton 2025",
-          "caption": "Présentation finale"
+          "src": "../../assets/images/hackaton20261.jpg",
+          "alt": "Équipe et marionnette en cours de préparation pendant le Hackathon 2025",
+          "caption": "Phase de mise au point du spectacle automatisé"
+        },
+        {
+          "src": "../../assets/images/hackaton20262.jpg",
+          "alt": "Structure en carton et marionnette du Hackathon 2025",
+          "caption": "Prototype de scène et mécanismes de traction"
         }
       ]
     },
     {
       "id": "cybersecurity-2026",
       "titre": "Cybersecurity Challenge Belgium 2026",
-      "details": "Résolution de challenges en sécurité défensive et offensive avec restitution technique.",
-      "images": []
-    },
-    {
-      "id": "dev-web-perso",
-      "titre": "Développement web personnel",
-      "details": "Conception du portfolio, intégration responsive et amélioration continue de l'UX.",
-      "images": []
-    },
-    {
-      "id": "coaching-softmaker",
-      "titre": "Coaching semaine Softmaker",
-      "details": "Coaching d'étudiants en semaine internationale.",
+      "details": "Participation à un CTF (Capture The Flag) avec des épreuves techniques en cybersécurité.",
+      "explication": "Le Cybersecurity Challenge est organisé comme un CTF de type jeopardy: les participants résolvent des challenges indépendants pour récupérer des flags et marquer des points. J'ai travaillé sur des exercices couvrant plusieurs catégories, notamment web, cryptographie, reverse engineering, forensics et programmation. Cette activité m'a permis d'améliorer ma méthodologie d'investigation, ma capacité à enchaîner des hypothèses rapidement et ma rigueur dans l'analyse technique sous contrainte de temps. Elle a également renforcé ma capacité à documenter clairement le cheminement de résolution et à capitaliser sur les techniques découvertes.",
       "images": [
         {
-          "src": "../../assets/images/placeholder.svg",
-          "alt": "Preuve papier du coaching",
-          "caption": "Preuve du coaching"
+          "src": "../../assets/images/cscb_mail.png",
+          "alt": "Email reçu dans le cadre du Cybersecurity Challenge Belgium",
+          "caption": "Communication officielle liée au challenge"
+        },
+        {
+          "src": "../../assets/images/cscb_discord.png",
+          "alt": "Espace Discord du Cybersecurity Challenge Belgium",
+          "caption": "Canal de coordination et support pendant la compétition"
         }
       ]
     },
     {
-      "id": "heures-en-plus",
-      "titre": "Heures en plus",
-      "details": "Bloc réservé pour ajouter des heures détaillées au fur et à mesure.",
+      "id": "dev-web-perso",
+      "titre": "Développement web personnel",
+      "details": "Développement d'un site personnel évolutif pour organiser notre quotidien (films, recettes, listes partagées).",
+      "explication": "Cette activité concerne un site personnel que je développe pour ma copine et moi. Nous l'utilisons comme espace pratique pour centraliser des listes utiles au quotidien, comme les films à regarder, les recettes à tester et d'autres contenus partagés. Le projet est pensé comme une base évolutive: je l'améliore progressivement en ajoutant de nouvelles fonctionnalités selon nos besoins. Au-delà de l'usage personnel, ce site me sert aussi de terrain d'expérimentation pour consolider mes compétences en structuration front-end, en ergonomie et en maintenance continue d'une application web.",
+      "external_links": [
+        {
+          "url": "https://github.com/Thomas-Preat/top-secret",
+          "label": "Repository GitHub du site personnel"
+        }
+      ],
+      "images": [
+        {
+          "src": "../../assets/images/dev_perso1.png",
+          "alt": "Capture d'écran du site personnel (vue 1)",
+          "caption": "Page recettes du site"
+        },
+        {
+          "src": "../../assets/images/dev_perso2.png",
+          "alt": "Capture d'écran du site personnel (vue 2)",
+          "caption": "Page films et création d'une carte"
+        }
+      ]
+    },
+    {
+      "id": "coaching-softmaker",
+      "titre": "Coaching semaine Softmaker",
+      "details": "Accompagnement d'étudiants pendant la Semaine Softmaker et participation au jury de clôture.",
+      "explication": "M. Noël m'a demandé de contribuer à la semaine internationale qu'il encadrait à l'EPHEC. Mon rôle consistait à accompagner les étudiants dans leur réflexion sur des problématiques présentées par deux intervenants touchés par l'illettrisme et/ou l'analphabétisme. Les groupes devaient concevoir une application répondant à au moins une problématique exposée. En complément de cet accompagnement, j'ai aussi participé au jury de fin de projet avec d'autres experts: nous avons assisté aux démonstrations, posé des questions et attribué une note à chaque groupe. C'était ma première expérience en jury, un exercice impressionnant au départ, qui m'a permis de renforcer mon écoute active, ma capacité à évaluer une présentation et à formuler des questions pertinentes sur les points encore flous.",
+      "images": [
+        {
+          "src": "../../assets/images/softmakers.jpg",
+          "alt": "Attestation de participation à la semaine SoftMakers",
+          "caption": "Attestation officielle de participation"
+        },
+        {
+          "src": "../../assets/images/softmakers.png",
+          "alt": "Email d'invitation pour intervenir comme expert à la semaine SoftMakers",
+          "caption": "Invitation en tant qu'expert technique"
+        }
+      ]
+    },
+    {
+      "id": "digital-talent-night",
+      "titre": "Digital Talent Night",
+      "details": "Participation à une soirée de recrutement en format speed dating avec des entreprises du secteur digital.",
+      "explication": "La Digital Talent Night se déroulait sous forme de speed dating entre entreprises et participants, dans une ambiance plus décontractée qu'un entretien de recrutement classique. J'ai pu présenter mon parcours, échanger rapidement avec plusieurs recruteurs et m'entraîner à adapter mon discours selon les interlocuteurs. Les opportunités proposées étaient majoritairement orientées vers des profils plus expérimentés ou niveau master, ce qui m'a permis de mieux situer mon positionnement actuel en tant que junior. Cette activité a surtout renforcé mes soft skills: communication, capacité de synthèse, aisance relationnelle, écoute active et valorisation de mes points forts en contexte professionnel.",
+      "images": [
+        {
+          "src": "../../assets/images/talentNight1.jpg",
+          "alt": "Photo de la Digital Talent Night (vue 1)",
+          "caption": "Arrivée à l'événement"
+        },
+        {
+          "src": "../../assets/images/talentNight2.jpg",
+          "alt": "Photo de la Digital Talent Night (vue 2)",
+          "caption": "Arrivée à l'événement"
+        },
+        {
+          "src": "../../assets/images/talentNight3.jpg",
+          "alt": "Photo de la Digital Talent Night (vue 3)",
+          "caption": "Entrée dans le bâtiment et début de l'événement"
+        }
+      ]
+    },
+    {
+      "id": "cloud-azure",
+      "titre": "Conférence Cloud avec M365 et Azure Infrastructure",
+      "details": "Conférence technique sur les usages cloud en entreprise.",
+      "explication": "Cette conférence m'a apporté une vision plus concrète des environnements Microsoft 365 et Azure dans des contextes professionnels réels. J'y ai retenu des bonnes pratiques sur l'organisation des ressources, la sécurisation des accès et l'industrialisation des déploiements. Le contenu complète utilement mes connaissances en architecture et gouvernance cloud.",
+      "images": [
+        {
+          "src": "../../assets/images/cloud_azure.png",
+          "alt": "Preuve de participation à la conférence Cloud avec M365 et Azure Infrastructure",
+          "caption": "Confirmation de participation à la conférence"
+        }
+      ]
+    },
+    {
+      "id": "e-session-red-system",
+      "titre": "e-Session Cyber Sécurité by Red System",
+      "details": "Participation à une conférence de 2h orientée cybersécurité.",
+      "explication": "Cette e-Session m'a permis d'approfondir ma compréhension des enjeux actuels en cybersécurité à travers des retours d'expérience concrets présentés par Red System. J'y ai consolidé des réflexes utiles en matière de veille technique, d'analyse de risque et de posture de sécurité. Cette activité renforce également des soft skills importantes: capacité d'écoute, esprit critique et aptitude à transformer un contenu théorique en pistes d'action concrètes.",
+      "images": [
+        {
+          "src": "../../assets/images/RedSys.png",
+          "alt": "Support ou preuve de participation à l'e-Session Cyber Sécurité by Red System",
+          "caption": "Preuve de participation - e-Session Red System"
+        },
+        {
+          "src": "../../assets/images/RedSys2.png",
+          "alt": "Contenu complémentaire lié à l'e-Session Cyber Sécurité by Red System",
+          "caption": "Contenu de la session cybersécurité"
+        }
+      ]
+    },
+    {
+      "id": "musique-autres",
+      "titre": "Pratique musicale personnelle",
+      "details": "Comptabilisation de 5h valorisables de pratique musicale.",
+      "explication": "Je comptabilise 5 heures dans la catégorie \"Autres\" pour ma pratique musicale personnelle, réalisée en auto-didacte. Je joue du piano, de la guitare, de la batterie, de l'accordéon, de la trompette et quelques autres instruments moins connus. Cette activité développe des soft skills clés: discipline, concentration, régularité dans l'effort, écoute active, autonomie dans l'apprentissage et capacité à progresser sur le long terme.",
+      "images": []
+    },
+    {
+      "id": "job-etudiant-boulangerie",
+      "titre": "Job étudiant en boulangerie",
+      "details": "Comptabilisation de 5h valorisables de job étudiant.",
+      "explication": "Je comptabilise 5 heures dans la catégorie \"Autres\" pour mon expérience de job étudiant en boulangerie. Ce contexte m'a permis de renforcer des compétences transférables importantes: ponctualité, sens du service, gestion du rythme pendant les périodes de forte affluence, communication avec les clients et travail en équipe.",
       "images": []
     }
   ]

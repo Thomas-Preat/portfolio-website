@@ -49,20 +49,36 @@
       "heures_comptabilisees": 5
     },
     {
-        "id": "cloud-azure",
-        "projet": "Conférence Cloud avec M365 et Azure Infrastructure",
-        "categorie": "Participation événements",
-        "description": "Gestion de projet",
-        "heures_reelles": 2,
-        "heures_comptabilisees": 2
+      "id": "cloud-azure",
+      "projet": "Conférence Cloud avec M365 et Azure Infrastructure",
+      "categorie": "Conférence",
+      "description": "Cloud / Infrastructure",
+      "heures_reelles": 2,
+      "heures_comptabilisees": 2
     },
     {
-      "id": "heures-en-plus",
-      "projet": "Heures en plus (à détailler)",
+      "id": "e-session-red-system",
+      "projet": "e-Session Cyber Sécurité by Red System",
+      "categorie": "Conférence",
+      "description": "Cybersécurité",
+      "heures_reelles": 2,
+      "heures_comptabilisees": 2
+    },
+    {
+      "id": "musique-autres",
+      "projet": "Pratique musicale personnelle",
       "categorie": "Autres",
-      "description": "-",
+      "description": "/",
       "heures_reelles": "-",
-      "heures_comptabilisees": 10
+      "heures_comptabilisees": 5
+    },
+    {
+      "id": "job-etudiant-boulangerie",
+      "projet": "Job étudiant en boulangerie",
+      "categorie": "Autres",
+      "description": "/",
+      "heures_reelles": "-",
+      "heures_comptabilisees": 5
     }
   ]
 }

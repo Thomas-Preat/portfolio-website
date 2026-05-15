@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heures de Projets Prestées</title>
+    <title>Heures d'activités prestées</title>
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
@@ -24,17 +24,17 @@
     <main>
         <section>
             <h2>Suivi des heures</h2>
-            <p>La liste ci-dessous est le relevé officiel de mes heures prestées par projet. Cliquez sur une ligne pour afficher les détails et les visuels associés.</p>
+            <p>La liste ci-dessous est le relevé officiel de mes heures prestées par activité. Cliquez sur une ligne pour afficher le résumé, le texte explicatif et les visuels associés.</p>
         </section>
 
         <section id="table-hours">
-            <h1>Heures de Projets Prestées</h1>
+            <h1>Heures d'activités prestées</h1>
             <table id="hours-table" data-source="../assets/data/heures.json" data-details-source="../assets/data/heures-details.json">
-                <caption>Résumé des heures par projet</caption>
+                <caption>Résumé des heures par activité</caption>
                 <thead>
                     <tr>
                         <th>Catégorie</th>
-                        <th>Nom du projet</th>
+                        <th>Nom de l'activité</th>
                         <th>Cours concerné</th>
                         <th class="hours-count">Heures réelles</th>
                         <th class="hours-count">Heures comptabilisées</th>
@@ -59,8 +59,10 @@
         <div class="project-modal__backdrop" data-close-modal="true"></div>
         <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
             <button id="project-modal-close" class="project-modal__close" type="button" aria-label="Fermer">X</button>
-            <h2 id="project-modal-title">Détails du projet</h2>
+            <h2 id="project-modal-title">Détails de l'activité</h2>
+            <p id="project-modal-summary" class="project-modal__summary"></p>
             <p id="project-modal-text"></p>
+            <div id="project-modal-social" class="project-modal__social"></div>
             <div id="project-modal-gallery" class="project-modal__gallery"></div>
         </div>
     </div>

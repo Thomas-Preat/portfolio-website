@@ -107,16 +107,94 @@ function normalizeDetailsById(data) {
 
 function getImageItem(image) {
     if (typeof image === 'string') {
-        return { src: image, alt: 'Illustration du projet', caption: '' };
+        return { src: image, alt: "Illustration de l'activité", caption: '' };
     }
     if (image && typeof image === 'object') {
         return {
             src: image.src ?? '',
-            alt: image.alt ?? 'Illustration du projet',
+            alt: image.alt ?? "Illustration de l'activité",
             caption: image.caption ?? ''
         };
     }
     return { src: '', alt: '', caption: '' };
+}
+
+function toSafeExternalUrl(value) {
+    try {
+        const parsed = new URL(String(value));
+        return (parsed.protocol === 'https:' || parsed.protocol === 'http:') ? parsed.href : '';
+    } catch {
+        return '';
+    }
+}
+
+function getInstagramPostItem(post, index) {
+    if (typeof post === 'string') {
+        return {
+            url: toSafeExternalUrl(post),
+            label: `Post Instagram ${index + 1}`
+        };
+    }
+
+    if (post && typeof post === 'object') {
+        return {
+            url: toSafeExternalUrl(post.url ?? post.href ?? post.src ?? ''),
+            label: String(post.label ?? post.titre ?? post.caption ?? `Post Instagram ${index + 1}`)
+        };
+    }
+
+    return { url: '', label: '' };
+}
+
+function getExternalLinkItem(link, index) {
+    if (typeof link === 'string') {
+        return {
+            url: toSafeExternalUrl(link),
+            label: `Lien ${index + 1}`
+        };
+    }
+
+    if (link && typeof link === 'object') {
+        return {
+            url: toSafeExternalUrl(link.url ?? link.href ?? ''),
+            label: String(link.label ?? link.titre ?? `Lien ${index + 1}`)
+        };
+    }
+
+    return { url: '', label: '' };
+}
+
+function formatActivityText(text) {
+    const raw = String(text ?? '').replace(/\r\n/g, '\n').trim();
+    if (!raw) {
+        return '';
+    }
+
+    const manualParagraphs = raw
+        .split('\n')
+        .map((line) => line.trim())
+        .filter(Boolean);
+
+    if (manualParagraphs.length > 1) {
+        return manualParagraphs.join('\n\n');
+    }
+
+    const compact = raw.replace(/\s+/g, ' ');
+    const sentences = compact
+        .split(/(?<=[.!?])\s+(?=[A-ZÀ-ÖØ-Þ0-9])/u)
+        .map((sentence) => sentence.trim())
+        .filter(Boolean);
+
+    if (sentences.length <= 2) {
+        return compact;
+    }
+
+    const chunks = [];
+    for (let index = 0; index < sentences.length; index += 2) {
+        chunks.push(sentences.slice(index, index + 2).join(' '));
+    }
+
+    return chunks.join('\n\n');
 }
 
 function openProjectModal(project, details) {
@@ -126,23 +204,82 @@ function openProjectModal(project, details) {
     }
 
     const titleEl = $('#project-modal-title', modal);
+    const summaryEl = $('#project-modal-summary', modal);
     const textEl = $('#project-modal-text', modal);
+    const socialEl = $('#project-modal-social', modal);
     const galleryEl = $('#project-modal-gallery', modal);
 
-    const title = details?.titre ?? project?.projet ?? 'Détails du projet';
-    const text = details?.details ?? project?.description ?? 'Aucun détail disponible.';
+    const title = details?.titre ?? project?.projet ?? "Détails de l'activité";
+    const summary = details?.details ?? project?.description ?? 'Aucun résumé disponible.';
+    const text = details?.explication ?? details?.texte_explicatif ?? summary;
 
     if (titleEl) {
         titleEl.textContent = title;
     }
+    if (summaryEl) {
+        summaryEl.textContent = summary;
+    }
     if (textEl) {
-        textEl.textContent = text;
+        textEl.textContent = formatActivityText(text);
+    }
+
+    if (socialEl) {
+        const socialSource = Array.isArray(details?.instagram_posts)
+            ? details.instagram_posts
+            : (Array.isArray(details?.instagramLinks) ? details.instagramLinks : []);
+
+        const linksSource = Array.isArray(details?.external_links)
+            ? details.external_links
+            : (Array.isArray(details?.links) ? details.links : []);
+
+        const instagramPosts = socialSource
+            .map((post, index) => getInstagramPostItem(post, index))
+            .filter((post) => post.url);
+
+        const externalLinks = linksSource
+            .map((link, index) => getExternalLinkItem(link, index))
+            .filter((link) => link.url);
+
+        if (instagramPosts.length === 0 && externalLinks.length === 0) {
+            socialEl.innerHTML = '';
+        } else {
+            const instagramSection = instagramPosts.length > 0
+                ? `
+                    <h3 class="project-modal__social-title">Posts Instagram</h3>
+                    <ul class="project-modal__social-list">
+                        ${instagramPosts.map((post) => `
+                            <li>
+                                <a class="project-modal__social-link" href="${escapeHtml(post.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(post.label)}</a>
+                            </li>
+                        `).join('')}
+                    </ul>
+                `
+                : '';
+
+            const linksSection = externalLinks.length > 0
+                ? `
+                    <h3 class="project-modal__social-title">Liens utiles</h3>
+                    <ul class="project-modal__social-list">
+                        ${externalLinks.map((link) => `
+                            <li>
+                                <a class="project-modal__social-link" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>
+                            </li>
+                        `).join('')}
+                    </ul>
+                `
+                : '';
+
+            socialEl.innerHTML = `
+                ${instagramSection}
+                ${linksSection}
+            `;
+        }
     }
 
     if (galleryEl) {
         const images = Array.isArray(details?.images) ? details.images : [];
         if (images.length === 0) {
-            galleryEl.innerHTML = '<p class="project-modal__empty">Aucune image pour ce projet.</p>';
+            galleryEl.innerHTML = '<p class="project-modal__empty">Aucune image pour cette activité.</p>';
         } else {
             galleryEl.innerHTML = images.map((image) => {
                 const item = getImageItem(image);
@@ -185,7 +322,7 @@ function openImageLightbox(src, alt, caption = '') {
     }
 
     imageEl.src = src;
-    imageEl.alt = alt || 'Image du projet';
+    imageEl.alt = alt || "Image de l'activité";
     captionEl.textContent = caption || alt || '';
 
     lightbox.classList.add('is-open');
